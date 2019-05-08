@@ -13,3 +13,4 @@ http -v --json POST localhost:8081/GeographicalAreas label="Antarctique", code="
 
 http -v --json GET localhost:8081/GeographicalAreas
 ```
+Référentiel au format REST des Implantations et Services à l’Etranger
