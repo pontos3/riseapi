@@ -1,5 +1,7 @@
 package fr.pontos3.rise.riserest;
 
+import lombok.Data;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -7,6 +9,7 @@ import javax.persistence.Id;
 
 import org.hibernate.envers.Audited;
 
+@Data
 @Entity
 @Audited
 public class GeographicalArea {
@@ -19,7 +22,7 @@ public class GeographicalArea {
     private String description;
     private String code;
 
-	public String getlabel() {
+/*	public String getlabel() {
 		return label;
 	}
 
@@ -41,6 +44,6 @@ public class GeographicalArea {
 
     public void setcode(String code) {
         this.code = code;
-    }
+    } */
 
 }
