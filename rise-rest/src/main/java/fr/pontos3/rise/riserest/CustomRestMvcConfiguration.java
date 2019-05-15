@@ -16,8 +16,8 @@ class CustomRestMvcConfiguration {
 
       @Override
       public void configureRepositoryRestConfiguration(RepositoryRestConfiguration config) {
-        config.setDefaultMediaType(MediaType.APPLICATION_JSON_UTF8);
-        config.useHalAsDefaultJsonMediaType(false);
+        config.setDefaultMediaType(MediaType.APPLICATION_JSON);
+        //config.useHalAsDefaultJsonMediaType(false);
       }
     };
   }

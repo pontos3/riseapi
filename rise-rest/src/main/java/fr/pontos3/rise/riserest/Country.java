@@ -1,34 +1,40 @@
 package fr.pontos3.rise.riserest;
 
-import java.util.List;
+import java.io.Serializable;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 //import javax.validation.constraints.NotNull;
-import javax.persistence.OneToMany;
-
-//import org.hibernate.envers.Audited;
 
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+//import org.hibernate.envers.Audited;
 //@Audited
 
 @Entity
-@Getter @Setter @NoArgsConstructor
-public class GeographicalArea {
+@Getter
+@Setter
+@NoArgsConstructor
+public class Country {
 
-	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	private long id;
+	private @Id long id;
 
-	private String label;
-	private String code;
+	private String iso2;
+	private String iso3;
 	
-	@OneToMany
-	private List<Country> countries;
+	private String usualName;
+
+	private String officialName;
+
+	private String shortName;
+
+	private double longitude;
+
+	private double latitude;
 
 }
