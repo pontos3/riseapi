@@ -1,23 +1,18 @@
 package fr.pontos3.rise.riserest;
 
-import java.io.Serializable;
-
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-//import javax.validation.constraints.NotNull;
 
-import lombok.Getter;
+import lombok.Data;
 import lombok.NoArgsConstructor;
-import lombok.Setter;
 
 //import org.hibernate.envers.Audited;
 //@Audited
 
 @Entity
-@Getter
-@Setter
+@Data
 @NoArgsConstructor
 public class Country {
 
@@ -36,5 +31,15 @@ public class Country {
 	private double longitude;
 
 	private double latitude;
+
+	Country (String iso2, String iso3, String usualName, String officialName, String shortName, double longitude, double latitude) {
+		this.iso2 = iso2;
+		this.iso3 = iso3;
+		this.usualName = usualName;
+		this.officialName = officialName;
+		this.shortName = shortName;
+		this.longitude = longitude;
+		this.latitude = latitude;
+	}
 
 }

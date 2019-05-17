@@ -31,4 +31,10 @@ public class GeographicalArea {
 	@OneToMany
 	private List<Country> countries;
 
+	GeographicalArea(String code, String label, List<Country> countries) {
+		this.code = code;
+		this.label = label;
+		this.countries = countries;
+	}
+
 }
