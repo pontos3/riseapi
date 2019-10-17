@@ -1,0 +1,241 @@
+{
+	"info": {
+		"_postman_id": "f919d17e-299b-4ac4-a162-89091212ccbb",
+		"name": "Rise1",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "http://localhost:8081/geographicalareas/8/countries",
+			"request": {
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"iso2\" : \"de\",\n    \"iso3\" : \"deu\",\n    \"usualName\" : \"Allemagne\",\n    \"officialName\" : \"République fédérale d'allemagne\",\n    \"shortName\" : \"Allemagne\",\n    \"longitude\" : 10.45,\n    \"latitude\" : 51.16\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8081/geographicalareas/8/countries",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"geographicalareas",
+						"8",
+						"countries"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "geographicalareas",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8081/geographicalareas",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"geographicalareas"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "countries",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8081/countries",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"countries"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "geographicalareas/europe(8)/countries",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8081/geographicalareas/8/countries",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"geographicalareas",
+						"8",
+						"countries"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "countries(Allemagne)",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"iso2\" : \"de\",\n    \"iso3\" : \"deu\",\n    \"usualName\" : \"Allemagne\",\n    \"officialName\" : \"République fédérale d'allemagne\",\n    \"shortName\" : \"Allemagne\",\n    \"longitude\" : 10.45,\n    \"latitude\" : 51.16\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8081/countries",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"countries"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "geographicalareas/europe(5)/countries",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "text/uri-list",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "http://localhost:8081/countries/9"
+				},
+				"url": {
+					"raw": "http://localhost:8081/geographicalareas/5/countries",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"geographicalareas",
+						"5",
+						"countries"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "countries/Allemagne(9)/geographicalArea",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "text/uri-list",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "http://localhost:8081/geographicalareas/8"
+				},
+				"url": {
+					"raw": "http://localhost:8081/countries/3/geographicalArea",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"countries",
+						"3",
+						"geographicalArea"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "countries(Portugal)",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"iso2\" : \"pt\",\n    \"iso3\" : \"prt\",\n    \"usualName\" : \"Portugal\",\n    \"officialName\" : \"République portugaise\",\n    \"shortName\" : \"Portugal\",\n    \"longitude\" : -8.22,\n    \"latitude\" : 39.39\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8081/geographicalareas/8/countries",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"geographicalareas",
+						"8",
+						"countries"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
