@@ -6,29 +6,38 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-//import javax.validation.constraints.NotNull;
 import javax.persistence.OneToMany;
+import javax.validation.constraints.NotNull;
+
+import org.springframework.data.rest.core.annotation.RestResource;
+
+import lombok.AllArgsConstructor;
+import lombok.Data;
 
 //import org.hibernate.envers.Audited;
 
-import lombok.Getter;
 import lombok.NoArgsConstructor;
-import lombok.Setter;
+
+
 
 //@Audited
 
 @Entity
-@Getter @Setter @NoArgsConstructor
+@Data @NoArgsConstructor @AllArgsConstructor
 public class GeographicalArea {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private long id;
 
+	@NotNull
 	private String label;
+
+	@NotNull
 	private String code;
 	
-	@OneToMany
+	@OneToMany(mappedBy="geographicalArea")
+	@RestResource(path="countries", rel="countries")
 	private List<Country> countries;
 
 	GeographicalArea(String code, String label, List<Country> countries) {
@@ -36,5 +45,4 @@ public class GeographicalArea {
 		this.label = label;
 		this.countries = countries;
 	}
-
 }
