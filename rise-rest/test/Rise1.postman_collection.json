@@ -6,7 +6,7 @@
 	},
 	"item": [
 		{
-			"name": "http://localhost:8081/geographicalareas/8/countries",
+			"name": "http://localhost:8081/area/8/countries",
 			"request": {
 				"method": "PATCH",
 				"header": [
@@ -27,14 +27,14 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:8081/geographicalareas/8/countries",
+					"raw": "http://localhost:8081/area/8/countries",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
 					"port": "8081",
 					"path": [
-						"geographicalareas",
+						"area",
 						"8",
 						"countries"
 					]
@@ -43,19 +43,19 @@
 			"response": []
 		},
 		{
-			"name": "geographicalareas",
+			"name": "area",
 			"request": {
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:8081/geographicalareas",
+					"raw": "http://localhost:8081/area",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
 					"port": "8081",
 					"path": [
-						"geographicalareas"
+						"area"
 					]
 				}
 			},
@@ -81,19 +81,19 @@
 			"response": []
 		},
 		{
-			"name": "geographicalareas/europe(8)/countries",
+			"name": "area/europe(8)/countries",
 			"request": {
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:8081/geographicalareas/8/countries",
+					"raw": "http://localhost:8081/area/8/countries",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
 					"port": "8081",
 					"path": [
-						"geographicalareas",
+						"area",
 						"8",
 						"countries"
 					]
@@ -137,7 +137,7 @@
 			"response": []
 		},
 		{
-			"name": "geographicalareas/europe(5)/countries",
+			"name": "area/europe(5)/countries",
 			"request": {
 				"method": "PUT",
 				"header": [
@@ -153,14 +153,14 @@
 					"raw": "http://localhost:8081/countries/9"
 				},
 				"url": {
-					"raw": "http://localhost:8081/geographicalareas/5/countries",
+					"raw": "http://localhost:8081/area/5/countries",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
 					"port": "8081",
 					"path": [
-						"geographicalareas",
+						"area",
 						"5",
 						"countries"
 					]
@@ -169,7 +169,7 @@
 			"response": []
 		},
 		{
-			"name": "countries/Allemagne(9)/geographicalArea",
+			"name": "countries/Allemagne(9)/area",
 			"request": {
 				"method": "PUT",
 				"header": [
@@ -181,10 +181,10 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "http://localhost:8081/geographicalareas/8"
+					"raw": "http://localhost:8081/area/8"
 				},
 				"url": {
-					"raw": "http://localhost:8081/countries/3/geographicalArea",
+					"raw": "http://localhost:8081/countries/3/area",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -193,7 +193,7 @@
 					"path": [
 						"countries",
 						"3",
-						"geographicalArea"
+						"area"
 					]
 				}
 			},
@@ -221,14 +221,14 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:8081/geographicalareas/8/countries",
+					"raw": "http://localhost:8081/areas/8/countries",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
 					"port": "8081",
 					"path": [
-						"geographicalareas",
+						"areas",
 						"8",
 						"countries"
 					]

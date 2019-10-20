@@ -1,12 +1,19 @@
 package fr.pontos3.rise.riserest;
 
+import java.time.Instant;
+
 import javax.persistence.Entity;
+import javax.persistence.EntityListeners;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.Version;
 import javax.validation.constraints.NotNull;
+
+import org.springframework.data.annotation.LastModifiedDate;
+import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -19,10 +26,17 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
+@EntityListeners(AuditingEntityListener.class)
 public class Country {
 
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private @Id long id;
+	
+	@Version
+	private long version;
+	
+	
+	private @LastModifiedDate Instant modified;
 
 	private String iso2;
 	private String iso3;
@@ -41,7 +55,7 @@ public class Country {
 
 	@ManyToOne
 	@JoinColumn(name="countries_id")
-	private GeographicalArea geographicalArea;
+	private Area area;
 
 	Country (String iso2, String iso3, String usualName, String officialName, String shortName, double longitude, double latitude) {
 		this.iso2 = iso2;

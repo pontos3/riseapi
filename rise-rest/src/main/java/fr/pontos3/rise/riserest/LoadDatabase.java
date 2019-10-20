@@ -19,7 +19,7 @@ class LoadDatabase {
     private List<Country> countryList = new ArrayList<Country>();
 
   @Bean
-  CommandLineRunner initDatabaseCountry(CountryRepository countryRepository, GeographicalAreaRepository repository) {
+  CommandLineRunner initDatabaseCountry(CountryRepository countryRepository, AreaRepository repository) {
     return args -> {
       log.info("Preloading " + countryRepository.save(france));
       log.info("Preloading " + countryRepository.save(spain));
@@ -27,12 +27,12 @@ class LoadDatabase {
       this.countryList.add(france);
       this.countryList.add(spain);
 
-      log.info("Preloading " + repository.save(new GeographicalArea("AF", "Afrique", null)));
-      log.info("Preloading " + repository.save(new GeographicalArea("AFN", "Afrique du nord / Moyen-Orient", null)));
-      log.info("Preloading " + repository.save(new GeographicalArea("AM", "Amérique", null)));
-      log.info("Preloading " + repository.save(new GeographicalArea("ANT", "Antarctique", null)));
-      log.info("Preloading " + repository.save(new GeographicalArea("AS", "Asie-Océanie", null)));
-      log.info("Preloading " + repository.save(new GeographicalArea("EU", "Europe", this.countryList)));
+      log.info("Preloading " + repository.save(new Area("AF", "Afrique", null)));
+      log.info("Preloading " + repository.save(new Area("AFN", "Afrique du nord / Moyen-Orient", null)));
+      log.info("Preloading " + repository.save(new Area("AM", "Amérique", null)));
+      log.info("Preloading " + repository.save(new Area("ANT", "Antarctique", null)));
+      log.info("Preloading " + repository.save(new Area("AS", "Asie-Océanie", null)));
+      log.info("Preloading " + repository.save(new Area("EU", "Europe", this.countryList)));
 
     };
   }
