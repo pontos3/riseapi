@@ -6,7 +6,9 @@ import org.springframework.data.repository.PagingAndSortingRepository;
 import org.springframework.data.repository.history.RevisionRepository;
 import org.springframework.data.repository.query.Param;
 import org.springframework.data.rest.core.annotation.RepositoryRestResource;
+import org.springframework.web.bind.annotation.CrossOrigin;
 
+@CrossOrigin
 @RepositoryRestResource(collectionResourceRel = "areas", path = "areas")
 public interface AreaRepository extends RevisionRepository<Area, Long, Long>, PagingAndSortingRepository<Area, Long>{
 
