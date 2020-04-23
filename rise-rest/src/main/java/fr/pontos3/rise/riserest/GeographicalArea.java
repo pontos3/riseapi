@@ -35,7 +35,8 @@ public class GeographicalArea {
 
 	@NotNull
 	private String code;
-	
+
+	/*
 	@OneToMany(mappedBy="geographicalArea")
 	@RestResource(path="countries", rel="countries")
 	private List<Country> countries;
@@ -45,4 +46,5 @@ public class GeographicalArea {
 		this.label = label;
 		this.countries = countries;
 	}
+	*/
 }

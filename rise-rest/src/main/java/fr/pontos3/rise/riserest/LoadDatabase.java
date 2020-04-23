@@ -13,11 +13,13 @@ import org.springframework.context.annotation.Configuration;
 @Slf4j
 class LoadDatabase {
 
+	/*
     private Country france = new Country("fr", "fra", "France", "France", "France", 2.21, 46.22);
     private Country spain = new Country("es", "esp", "Espagne", "Espagne", "Espagne", -3.74, 40.46);
 
     private List<Country> countryList = new ArrayList<Country>();
-
+    */
+/*
   @Bean
   CommandLineRunner initDatabaseCountry(CountryRepository countryRepository, GeographicalAreaRepository repository) {
     return args -> {
@@ -35,5 +37,5 @@ class LoadDatabase {
       log.info("Preloading " + repository.save(new GeographicalArea("EU", "Europe", this.countryList)));
 
     };
-  }
+  }*/
 }
