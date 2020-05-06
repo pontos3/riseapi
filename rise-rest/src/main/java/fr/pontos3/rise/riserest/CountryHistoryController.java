@@ -1,14 +1,16 @@
 package fr.pontos3.rise.riserest;
 
-import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
-import java.util.List;
-
+import org.springframework.data.domain.Example;
+import org.springframework.data.domain.ExampleMatcher;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.rest.webmvc.PersistentEntityResourceAssembler;
+import org.springframework.data.rest.webmvc.RepositoryRestController;
+import org.springframework.data.web.PagedResourcesAssembler;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
 
-@RestController
+@RepositoryRestController
 public class CountryHistoryController {
 	
 	private CountryHistoryRepository repository;
@@ -16,20 +18,29 @@ public class CountryHistoryController {
 	public CountryHistoryController(CountryHistoryRepository repository) {
 		this.repository = repository;
 	}
-	
-	@GetMapping("/test/test")
-	//public List<CountryHistory> getAllcurent(@RequestParam(value = "startDate") @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss") LocalDateTime startDate) {
-	public List<CountryHistory> getAllcurent(@RequestParam(value = "startDate") String startDate) {
-		
-		DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
-		
-		
-		LocalDateTime dateDebut = LocalDateTime.parse(startDate, formatter);
-		
-		//return repository.findByStartDateLessThan(dateDebut);
-		return repository.findAllWithstartDateBefore(dateDebut);
 
-		
+	@GetMapping("/countryhistory/filter")
+	public ResponseEntity<?> filter(
+		CountryHistory countryHistory,
+		Pageable page,
+		PagedResourcesAssembler assembler,
+		PersistentEntityResourceAssembler entityAssembler
+	){
+  
+	  ExampleMatcher matcher = ExampleMatcher.matching()
+		  .withIgnoreCase()		  
+		  .withStringMatcher(ExampleMatcher.StringMatcher.CONTAINING)
+		  .withIgnorePaths("id")
+		  .withIgnorePaths("country")
+		  .withIgnorePaths("startDate")
+		  .withIgnorePaths("endDate");
+  
+	  Example<CountryHistory> example = Example.of(countryHistory, matcher);
+  
+	  Page<CountryHistory> result = this.repository.findAll(example, page);
+  
+	  return ResponseEntity.ok(assembler.toResource(result, entityAssembler));
+  
 	}
 
 }

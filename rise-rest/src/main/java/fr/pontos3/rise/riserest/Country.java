@@ -1,11 +1,11 @@
 package fr.pontos3.rise.riserest;
 
+import java.util.List;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-
-import java.util.UUID;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -20,8 +20,8 @@ import lombok.NoArgsConstructor;
 @Entity
 public class Country {
 
-	@GeneratedValue(strategy = GenerationType.AUTO)
-	private @Id UUID id;
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private @Id long id;
 
 	private double longitude;
 
