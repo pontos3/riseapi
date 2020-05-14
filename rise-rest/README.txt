@@ -32,3 +32,5 @@ https://www.baeldung.com/spring-data-rest-relationships
 http -v --json POST localhost:8081/countries longitude=67.721655 latitude=33.927125 #pour Afghanistan
 http -v --json POST localhost:8081/countryhistory country="./countries/1" usualName="Afghanistan" officialName="la République islamique d’Afghanistan" listName="Afghanistan" iso2="af" iso3="afg"
 
+Données Source
+

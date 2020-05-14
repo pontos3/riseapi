@@ -1,4 +1,5 @@
 # riseapi
+
 country state address REST api
 
 Sample with httpie:
@@ -20,4 +21,9 @@ http -v --json POST localhost:8081/GeographicalAreas label="Antarctique" code="A
 http -v --json GET localhost:8081/GeographicalAreas
 
 ```
+
 Référentiel au format REST des Implantations et Services à l’Etranger
+
+Tableau de validation des api:
+
+<https://airtable.com/shrSeU4DiIOId0CRU/tblrRFhPXiwQaSgSk>

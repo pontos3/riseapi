@@ -1,16 +1,7 @@
 package fr.pontos3.rise.riserest;
 
-import java.util.Locale;
-
-import javax.validation.Validation;
-import javax.validation.Validator;
-
-import org.hibernate.validator.messageinterpolation.ResourceBundleMessageInterpolator;
-import org.hibernate.validator.resourceloading.PlatformResourceBundleLocator;
-import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.context.support.ReloadableResourceBundleMessageSource;
-import org.springframework.validation.beanvalidation.LocalValidatorFactoryBean;
+
 
 @Configuration
 public class AppConfig {

@@ -3,22 +3,11 @@ package fr.pontos3.rise.riserest;
 import lombok.extern.slf4j.Slf4j;
 
 import java.io.File;
-import java.io.FileReader;
-import java.io.Reader;
-import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.HashMap;
-import java.util.Iterator;
-import java.util.List;
 import java.util.Map;
 
-import com.fasterxml.jackson.databind.JsonNode;
-import com.fasterxml.jackson.databind.MappingIterator;
-import com.fasterxml.jackson.databind.ObjectMapper;
-import com.fasterxml.jackson.databind.ObjectReader;
 import com.fasterxml.jackson.dataformat.csv.CsvMapper;
 import com.fasterxml.jackson.dataformat.csv.CsvParser;
-import com.fasterxml.jackson.dataformat.csv.CsvSchema;
 
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.annotation.Bean;
@@ -97,25 +86,28 @@ class LoadDatabase {
         
         log.info("mapValue =>" + mapValue.toString());
 
-        Country country = new Country(
-          Double.valueOf(mapValue.get("lat")!=null?mapValue.get("lat"):"0.0"),
-          Double.valueOf(mapValue.get("lon")!=null?mapValue.get("lat"):"0.0")
-          ); 
-  
-        Country savedCountry = countryRepository.save(country);
-        log.info("saveCountry =>" + savedCountry);
-  
-        CountryHistory countryHistory = new CountryHistory(savedCountry, 
-          mapValue.get("iso2") == "" ? null: mapValue.get("iso2"),
-          mapValue.get("iso3") == "" ? null: mapValue.get("iso3"),
-          mapValue.get("shortName"),
-          mapValue.get("longName"),
-          mapValue.get("shortName"));
-  
-        log.info("saveCountryHistory =>" + countryHistory);
-  
-        CountryHistory savedCountryHistory = countryHistoryRepository.save(countryHistory);
-        log.info("saveCountryHistory =>" + savedCountryHistory);
+        if(mapValue.get("shortName") != null) {
+
+          Country country = new Country(
+            Double.valueOf(mapValue.get("lat")!=null?mapValue.get("lat"):"0.0"),
+            Double.valueOf(mapValue.get("lon")!=null?mapValue.get("lat"):"0.0")
+            ); 
+    
+          Country savedCountry = countryRepository.save(country);
+          log.info("saveCountry =>" + savedCountry);
+
+
+          CountryHistory countryHistory = new CountryHistory(savedCountry, 
+            mapValue.get("iso2") == "" ? null: mapValue.get("iso2"),
+            mapValue.get("iso3") == "" ? null: mapValue.get("iso3"),
+            mapValue.get("shortName"),
+            mapValue.get("longName"),
+            mapValue.get("shortName"));
+    
+          log.info("saveCountryHistory =>" + countryHistory);
+          CountryHistory savedCountryHistory = countryHistoryRepository.save(countryHistory);
+          log.info("saveCountryHistory =>" + savedCountryHistory);
+        }
       }
 
 

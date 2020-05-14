@@ -1,11 +1,8 @@
 package fr.pontos3.rise.riserest;
 
 import java.time.LocalDateTime;
-import java.util.List;
 
-import org.hibernate.annotations.SortType;
 import org.springframework.data.domain.Example;
-import org.springframework.data.domain.ExampleMatcher;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort.Direction;
@@ -24,7 +21,7 @@ public interface CountryHistoryRepository extends PagingAndSortingRepository<Cou
     
 
     @RestResource(exported = false)
-    Page<CountryHistory> findAll( Example example, Pageable P);
+    Page<CountryHistory> findAll( Example<CountryHistory> example, Pageable P);
 
     @RestResource(path = "findByIso2", rel = "findByIso2")
     Page<CountryHistory> findByIso2IgnoreCase(@Param("iso2") String iso2, 
