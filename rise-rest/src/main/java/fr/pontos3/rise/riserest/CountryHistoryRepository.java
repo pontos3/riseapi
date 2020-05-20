@@ -14,67 +14,72 @@ import org.springframework.data.rest.core.annotation.RestResource;
 import org.springframework.data.web.SortDefault;
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.format.annotation.DateTimeFormat.ISO;
+import org.springframework.security.access.prepost.PreAuthorize;
 
-
+@PreAuthorize("hasRole('ROLE_USER')")
 @RepositoryRestResource(collectionResourceRel = "countryhistory", path = "countryhistory")
 public interface CountryHistoryRepository extends PagingAndSortingRepository<CountryHistory, Long> {
-    
 
-    @RestResource(exported = false)
-    Page<CountryHistory> findAll( Example<CountryHistory> example, Pageable P);
+  @RestResource(exported = false)
+  Page<CountryHistory> findAll(Example<CountryHistory> example, Pageable P);
 
-    @RestResource(path = "findByIso2", rel = "findByIso2")
-    Page<CountryHistory> findByIso2IgnoreCase(@Param("iso2") String iso2, 
-      @SortDefault.SortDefaults({
-          @SortDefault(sort = "startDate", direction = Direction.DESC)
-      })
-      Pageable P 
-    );
+  @RestResource(path = "findByIso2", rel = "findByIso2")
+  Page<CountryHistory> findByIso2IgnoreCase(@Param("iso2") String iso2,
+      @SortDefault.SortDefaults({ @SortDefault(sort = "startDate", direction = Direction.DESC) }) Pageable P);
 
-    @Query("select a from CountryHistory a where :currentDate between a.startDate and a.endDate and lower(a.iso2)=lower(:iso2)")
-    CountryHistory findByIso2AtDate(@Param("iso2") String iso2,
+  @Query("select a from CountryHistory a where :currentDate between a.startDate and a.endDate and lower(a.iso2)=lower(:iso2)")
+  CountryHistory findByIso2AtDate(@Param("iso2") String iso2,
       @Param("currentDate") @DateTimeFormat(iso = ISO.DATE_TIME) LocalDateTime currentDate);
-    
 
-    @RestResource(path = "findByIso3", rel = "findByIso3")
-    Page<CountryHistory> findByIso3IgnoreCase(@Param("iso3") String iso3,  
-      @SortDefault.SortDefaults({
-          @SortDefault(sort = "startDate", direction = Direction.DESC)
-      })
-      Pageable P 
-    );
+  @RestResource(path = "findByIso3", rel = "findByIso3")
+  Page<CountryHistory> findByIso3IgnoreCase(@Param("iso3") String iso3,
+      @SortDefault.SortDefaults({ @SortDefault(sort = "startDate", direction = Direction.DESC) }) Pageable P);
 
-    @Query("select a from CountryHistory a where :currentDate between a.startDate and a.endDate and lower(a.iso3)=lower(:iso3)")
-    CountryHistory findByIso3AtDate(@Param("iso3") String iso3,
+  @Query("select a from CountryHistory a where :currentDate between a.startDate and a.endDate and lower(a.iso3)=lower(:iso3)")
+  CountryHistory findByIso3AtDate(@Param("iso3") String iso3,
       @Param("currentDate") @DateTimeFormat(iso = ISO.DATE_TIME) LocalDateTime currentDate);
-    
-    Page<CountryHistory> findByListNameIgnoreCase(@Param("listName") String listName, 
-      @SortDefault.SortDefaults({
-      @SortDefault(sort = "startDate", direction = Direction.DESC)
-      })
-      Pageable P
-    );
 
-    @RestResource(path = "findByUsualNameInsensitiveCase", rel = "findByUsualNameInsensitiveCase")
-    Page<CountryHistory> findByUsualNameIgnoreCaseContaining(@Param("usualName") String usualName, 
-      @SortDefault.SortDefaults({
-      @SortDefault(sort = "startDate", direction = Direction.DESC)
-      })
-      Pageable P
-    );
-    
-    Page<CountryHistory> findByStartDateLessThan(@DateTimeFormat(iso = ISO.DATE_TIME) LocalDateTime startDate, Pageable P);
-    
-    @Query("select a from CountryHistory a where a.startDate <= :currentDate")
-    Page<CountryHistory> findAllWithstartDateBefore(
-        @Param("currentDate") @DateTimeFormat(iso = ISO.DATE_TIME) LocalDateTime currentDate,
-        Pageable P
-      );
+  Page<CountryHistory> findByListNameIgnoreCase(@Param("listName") String listName,
+      @SortDefault.SortDefaults({ @SortDefault(sort = "startDate", direction = Direction.DESC) }) Pageable P);
 
-    @Query("select a from CountryHistory a where :currentDate between a.startDate and a.endDate")
-    Page<CountryHistory> findAllAtDate(
-      @Param("currentDate") @DateTimeFormat(iso = ISO.DATE_TIME) LocalDateTime currentDate, 
-      Pageable P
-    );
+  @RestResource(path = "findByUsualNameInsensitiveCase", rel = "findByUsualNameInsensitiveCase")
+  Page<CountryHistory> findByUsualNameIgnoreCaseContaining(@Param("usualName") String usualName,
+      @SortDefault.SortDefaults({ @SortDefault(sort = "startDate", direction = Direction.DESC) }) Pageable P);
+
+  Page<CountryHistory> findByStartDateLessThan(@DateTimeFormat(iso = ISO.DATE_TIME) LocalDateTime startDate,
+      Pageable P);
+
+  @Query("select a from CountryHistory a where a.startDate <= :currentDate")
+  Page<CountryHistory> findAllWithstartDateBefore(
+      @Param("currentDate") @DateTimeFormat(iso = ISO.DATE_TIME) LocalDateTime currentDate, Pageable P);
+
+  @Query("select a from CountryHistory a where :currentDate between a.startDate and a.endDate")
+  Page<CountryHistory> findAllAtDate(
+      @Param("currentDate") @DateTimeFormat(iso = ISO.DATE_TIME) LocalDateTime currentDate, Pageable P);
+
+  
+  @PreAuthorize("hasRole('ROLE_ADMIN')")
+  @Override
+  void delete(CountryHistory entity);
+
+  @PreAuthorize("hasRole('ROLE_ADMIN')")
+  @Override
+  void deleteAll();
+
+  @PreAuthorize("hasRole('ROLE_ADMIN')")
+  @Override
+  void deleteAll(Iterable<? extends CountryHistory> entities);
+
+  @PreAuthorize("hasRole('ROLE_ADMIN')")
+  @Override
+  void deleteById(Long id);
+
+  @PreAuthorize("hasRole('ROLE_ADMIN')")
+  @Override
+  <S extends CountryHistory> Iterable<S> saveAll(Iterable<S> entities);
+
+  @PreAuthorize("hasRole('ROLE_ADMIN')")
+  @Override
+  <S extends CountryHistory> S save(S entity);
 
 }

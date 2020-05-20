@@ -12,6 +12,7 @@ import com.fasterxml.jackson.dataformat.csv.CsvParser;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.security.core.context.SecurityContextHolder;
 
 @Configuration
 @Slf4j
@@ -79,6 +80,11 @@ class LoadDatabase {
         log.error("Error occurred while loading object list from file ", e);
       }
 
+      /**
+       * Due to method-level protections on {@link example.company.ItemRepository}, the security context must be loaded
+       * with an authentication token containing the necessary privileges.
+       */
+      SecurityUtils.runAs("system", "system", "ROLE_ADMIN");
 
       for(Map.Entry<String, HashMap<String,String>> mapentry : resultMap_allCountry.entrySet()) {
 
@@ -109,6 +115,8 @@ class LoadDatabase {
           log.info("saveCountryHistory =>" + savedCountryHistory);
         }
       }
+
+      SecurityContextHolder.clearContext();
 
 
       //Create objectMapper instance
