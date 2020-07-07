@@ -39,7 +39,7 @@ public class OAuth2ClientSecurityConfig extends WebSecurityConfigurerAdapter {
    *
    * NOTE: GET is not shown which defaults to permitted.
    */
-  
+/*  
   @Override
   protected void configure(HttpSecurity http) throws Exception {
 
@@ -67,4 +67,37 @@ public class OAuth2ClientSecurityConfig extends WebSecurityConfigurerAdapter {
 
 
   }
+  */
+  @Override
+  protected void configure(HttpSecurity http) throws Exception {
+
+    http
+      .sessionManagement()
+      .sessionCreationPolicy(SessionCreationPolicy.STATELESS).and()
+      .csrf().disable()
+      .authorizeRequests()
+      .antMatchers(HttpMethod.GET, "/countries").hasRole("USER")
+        //.antMatchers(HttpMethod.GET, "/countries").hasAuthority("SCOPE_riserest")
+        //.antMatchers(HttpMethod.GET, "/countries").hasAuthority("SCOPE_countries:read")
+      .antMatchers(HttpMethod.POST, "/countries").hasAuthority("SCOPE_countries:write")
+      .anyRequest().authenticated().and()
+      .oauth2ResourceServer().bearerTokenResolver(bearerTokenResolver)
+      .jwt();
+     
+    //   .antMatchers(HttpMethod.POST , "/employees").hasRole("ADMIN")
+    //   .antMatchers(HttpMethod.PUT, "/employees/**").hasRole("ADMIN")
+    //   .antMatchers(HttpMethod.PATCH, "/employees/**").hasRole("ADMIN").and()
+
+  }
+
+  /*
+    @Override
+    protected void configure(HttpSecurity http) throws Exception {
+      http
+        .authorizeRequests()
+          .anyRequest().authenticated()
+          .and()
+          .oauth2Login();
+    } */
+
 }

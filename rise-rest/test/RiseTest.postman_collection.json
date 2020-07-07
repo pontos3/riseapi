@@ -1,0 +1,937 @@
+{
+	"info": {
+		"_postman_id": "d2cc7368-229b-46e7-b0c3-b89e54d7b6db",
+		"name": "RiseTest",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "countries",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "oauth2",
+					"oauth2": [
+						{
+							"key": "addTokenTo",
+							"value": "header",
+							"type": "string"
+						},
+						{
+							"key": "accessToken",
+							"value": "eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJBamRJZjRXeWRQZ0NXRDU2MzVILVpfNGhyZlZpanczNE5ERnhxRlR0dDM0In0.eyJleHAiOjE1OTM3ODk1MjMsImlhdCI6MTU5Mzc4ODYyMywiYXV0aF90aW1lIjoxNTkzNzg4NjIzLCJqdGkiOiI0NmY4MjdjNC0wNmY3LTQyNWUtODdhNi1iNjAxN2NmOGY3MzMiLCJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwODAvYXV0aC9yZWFsbXMvTXlSZWFsbSIsImF1ZCI6ImFjY291bnQiLCJzdWIiOiI1MDAyM2M2MC1jYjlkLTRmYTktOGRhNC0zZmIxYjkyMzgzM2IiLCJ0eXAiOiJCZWFyZXIiLCJhenAiOiJleG9ueW1lIiwic2Vzc2lvbl9zdGF0ZSI6ImIyOWRhNWM0LTNjYzEtNGRiZC1hNmFkLWQ5ODRiOWYxM2U3MCIsImFjciI6IjEiLCJhbGxvd2VkLW9yaWdpbnMiOlsiaHR0cDovL2xvY2FsaG9zdDozMDAwIl0sInJlYWxtX2FjY2VzcyI6eyJyb2xlcyI6WyJST0xFX1VTRVIiLCJvZmZsaW5lX2FjY2VzcyIsInVtYV9hdXRob3JpemF0aW9uIl19LCJyZXNvdXJjZV9hY2Nlc3MiOnsiZXhvbnltZSI6eyJyb2xlcyI6WyJBRE1JTiIsIlVTRVIiXX0sImFjY291bnQiOnsicm9sZXMiOlsibWFuYWdlLWFjY291bnQiLCJtYW5hZ2UtYWNjb3VudC1saW5rcyIsInZpZXctcHJvZmlsZSJdfX0sInNjb3BlIjoicHJvZmlsZSBlbWFpbCByaXNlcmVzdCBpbmZvIiwiZW1haWxfdmVyaWZpZWQiOmZhbHNlLCJuYW1lIjoiUGhpbGlwcGUgU0VCSUxMRVQiLCJwcmVmZXJyZWRfdXNlcm5hbWUiOiJzZWJpbGxldHAiLCJnaXZlbl9uYW1lIjoiUGhpbGlwcGUiLCJmYW1pbHlfbmFtZSI6IlNFQklMTEVUIiwiZW1haWwiOiJla2lwaWxvdUBnbWFpbC5jb20ifQ.KxaGjjZqC9XGkSFYrfDugp9aXEM_li5u1OT_HybukQEJxEPwcsOn28FNsq0tl0sKpHC6-nwtJDo4v8DBbHOaLAtp8sSOKdqjUvlP2pc38_wClTuGmCvbp2E1o1DVdVBTt0mDC-q_mVBOSbwHl0DkQW0ct8M9ZINmAyTly_f-SRh2UrNNrRhSMW414PqQ6AE1twvO73nqcVpVjv56fKUjoY2iol048bXwdzZvBKluNMtqcFkh5F-XEZKRT8T9_l_d1oxZBT3-XwYg8tqviq0syoqZX_fUaLsDCTNuqDVAZT-diaPEHw_F_INKmCdAJMY6GK5esECtIdZ9CQkju7jDYg",
+							"type": "string"
+						},
+						{
+							"key": "tokenType",
+							"value": "bearer",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:8081/countries",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"countries"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "countries Copy",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "oauth2",
+					"oauth2": [
+						{
+							"key": "accessToken",
+							"value": "eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJBamRJZjRXeWRQZ0NXRDU2MzVILVpfNGhyZlZpanczNE5ERnhxRlR0dDM0In0.eyJleHAiOjE1OTQwMzIxOTIsImlhdCI6MTU5NDAzMTI5MiwiYXV0aF90aW1lIjoxNTk0MDMxMjkyLCJqdGkiOiJmMzJkNjIxMC04YWEzLTQ4M2ItYTdmNi03N2RhYzlkNDc3ZDMiLCJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwODAvYXV0aC9yZWFsbXMvTXlSZWFsbSIsImF1ZCI6ImFjY291bnQiLCJzdWIiOiI1MDAyM2M2MC1jYjlkLTRmYTktOGRhNC0zZmIxYjkyMzgzM2IiLCJ0eXAiOiJCZWFyZXIiLCJhenAiOiJleG9ueW1lIiwic2Vzc2lvbl9zdGF0ZSI6IjJkMWUwNGEzLTUwNTEtNDY3Yy04NjgzLTVhNzRiMTYxMGU3ZSIsImFjciI6IjEiLCJhbGxvd2VkLW9yaWdpbnMiOlsiaHR0cDovL2xvY2FsaG9zdDozMDAwIl0sInJlYWxtX2FjY2VzcyI6eyJyb2xlcyI6WyJST0xFX1VTRVIiLCJvZmZsaW5lX2FjY2VzcyIsInVtYV9hdXRob3JpemF0aW9uIl19LCJyZXNvdXJjZV9hY2Nlc3MiOnsiZXhvbnltZSI6eyJyb2xlcyI6WyJBRE1JTiIsIlVTRVIiXX0sImFjY291bnQiOnsicm9sZXMiOlsibWFuYWdlLWFjY291bnQiLCJtYW5hZ2UtYWNjb3VudC1saW5rcyIsInZpZXctcHJvZmlsZSJdfX0sInNjb3BlIjoicHJvZmlsZSBlbWFpbCByaXNlcmVzdCBpbmZvIiwiZW1haWxfdmVyaWZpZWQiOmZhbHNlLCJuYW1lIjoiUGhpbGlwcGUgU0VCSUxMRVQiLCJwcmVmZXJyZWRfdXNlcm5hbWUiOiJzZWJpbGxldHAiLCJnaXZlbl9uYW1lIjoiUGhpbGlwcGUiLCJmYW1pbHlfbmFtZSI6IlNFQklMTEVUIiwiZW1haWwiOiJla2lwaWxvdUBnbWFpbC5jb20ifQ.n_hysErbjT4j1T92khQEv9IF7r_m-FP1fzihHTTTRViTwWOZr1_3SoXXMSqdzrvlmjwWIdywxGpy7jB0eB-eQGhRRL5G_MIFqKRC64v2Y03-dS_o56SiwjXnYNRqAU3DfYV4PDU_c40RrvFPxWRLgJESich7DgCp6hmK_4gCSwU-Zjyhb0qTjmCu1oBW_VIGJ_jUTTRTftLA5ZELt955XkFF3NexjScDlgyQ2os24zMh-s2A-8XeuJJYdjt6OvjmuLD4RFGiRaMhZO9UR-5NWUOJtiJZOBfQHGu-1QnMNuT6LAW9w5c9TCgvqd3dHHRs2SQc2mQIisZx_xCs_bnN_Q",
+							"type": "string"
+						},
+						{
+							"key": "tokenType",
+							"value": "bearer",
+							"type": "string"
+						},
+						{
+							"key": "addTokenTo",
+							"value": "header",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:8081/countries",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"countries"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "countries_authent_oauth2",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "oauth2",
+					"oauth2": [
+						{
+							"key": "accessToken",
+							"value": "eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJBZFJ5Mkh5U296UUplZnpqV1N0Q2VhbUJmSGlzUmlvWmM0ckxyN1E2clBJIn0.eyJqdGkiOiI5YzAzMzUxMS1hY2Y1LTRkN2MtOTg0Yy05MWZjMjExNGY5ZWIiLCJleHAiOjE1ODk5ODM0MzQsIm5iZiI6MCwiaWF0IjoxNTg5OTgyNTM0LCJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwODAvYXV0aC9yZWFsbXMvTXlSZWFsbSIsImF1ZCI6ImFjY291bnQiLCJzdWIiOiJiMmM1NjA1Yi02ZjI2LTRlN2UtYmU1MS04NGJmYjZmYWUxN2EiLCJ0eXAiOiJCZWFyZXIiLCJhenAiOiJleG9ueW1lIiwiYXV0aF90aW1lIjoxNTg5OTgyNTM0LCJzZXNzaW9uX3N0YXRlIjoiNDdlYmYzYjMtYzNjYy00YTliLWI5MzAtYjE4NDU2OTk1MDU2IiwiYWNyIjoiMSIsImFsbG93ZWQtb3JpZ2lucyI6WyJodHRwOi8vbG9jYWxob3N0OjMwMDAiXSwicmVhbG1fYWNjZXNzIjp7InJvbGVzIjpbIlJPTEVfVVNFUiIsIm9mZmxpbmVfYWNjZXNzIiwidW1hX2F1dGhvcml6YXRpb24iXX0sInJlc291cmNlX2FjY2VzcyI6eyJhY2NvdW50Ijp7InJvbGVzIjpbIm1hbmFnZS1hY2NvdW50IiwibWFuYWdlLWFjY291bnQtbGlua3MiLCJ2aWV3LXByb2ZpbGUiXX19LCJzY29wZSI6InByb2ZpbGUgZW1haWwgaW5mbyIsImVtYWlsX3ZlcmlmaWVkIjpmYWxzZSwibmFtZSI6InRlc3QiLCJwcmVmZXJyZWRfdXNlcm5hbWUiOiJwaGlsIiwiZ2l2ZW5fbmFtZSI6InRlc3QiLCJwb3N0YWxfY29kZSI6WyI0NDY4MCJdfQ.X7rWfKO7Ue9QJhUKx2rInxd-oAJyo01SowUNteVcx92N2mCkeslqjgdbDZbWQALTFr9Rsb9w3ftdm6fOJYLn-iF3dCKSQmjoBeekeN2Lab2Rx_t930FhnZC-3OjBf-BTN6_gRb5Jqe5e1aWTlhXBZLs_sIK1bgLCkJLbpidZajQ5thPjtvbrr99-Obd7OqSo2OdfhyDXLy82MSPKAFRFZQE_uVfE2tbjvFi3kmOgGgYriv0ljTkoqpXDA0sqJJQ0rzhGVco0xcNJtcKgMkVVytutOZvF239q77fimL089ynvwN2dTMLgLI_CJpr6h1mVAFQpGJgAFCnERHoOb0bh4Q",
+							"type": "string"
+						},
+						{
+							"key": "tokenType",
+							"value": "bearer",
+							"type": "string"
+						},
+						{
+							"key": "addTokenTo",
+							"value": "header",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:8081/countries",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"countries"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "countries_authent_greg",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "turnquist",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "greg",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:8081/countries",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"countries"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "countries(Afghanistan)",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8081/countries/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"countries",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "countries(Afghanistan)",
+			"request": {
+				"auth": {
+					"type": "oauth2",
+					"oauth2": [
+						{
+							"key": "accessToken",
+							"value": "eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJBamRJZjRXeWRQZ0NXRDU2MzVILVpfNGhyZlZpanczNE5ERnhxRlR0dDM0In0.eyJleHAiOjE1OTM3ODU2OTQsImlhdCI6MTU5Mzc4NDc5NCwiYXV0aF90aW1lIjoxNTkzNzg0Nzk0LCJqdGkiOiIxMDZmNzY0Ny1iMjQwLTQ4ZTYtYjRjZi01ZmRkZWI0ZDAyODciLCJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwODAvYXV0aC9yZWFsbXMvTXlSZWFsbSIsImF1ZCI6ImFjY291bnQiLCJzdWIiOiI1MDAyM2M2MC1jYjlkLTRmYTktOGRhNC0zZmIxYjkyMzgzM2IiLCJ0eXAiOiJCZWFyZXIiLCJhenAiOiJleG9ueW1lIiwic2Vzc2lvbl9zdGF0ZSI6ImIwYWRhYWI1LThkMjgtNDVlNi05OWQwLWFhMGJhOTM3YWU3MSIsImFjciI6IjEiLCJhbGxvd2VkLW9yaWdpbnMiOlsiaHR0cDovL2xvY2FsaG9zdDozMDAwIl0sInJlYWxtX2FjY2VzcyI6eyJyb2xlcyI6WyJST0xFX1VTRVIiLCJvZmZsaW5lX2FjY2VzcyIsInVtYV9hdXRob3JpemF0aW9uIl19LCJyZXNvdXJjZV9hY2Nlc3MiOnsiZXhvbnltZSI6eyJyb2xlcyI6WyJBRE1JTiIsIlVTRVIiXX0sImFjY291bnQiOnsicm9sZXMiOlsibWFuYWdlLWFjY291bnQiLCJtYW5hZ2UtYWNjb3VudC1saW5rcyIsInZpZXctcHJvZmlsZSJdfX0sInNjb3BlIjoicHJvZmlsZSBlbWFpbCByaXNlcmVzdCBpbmZvIiwiZW1haWxfdmVyaWZpZWQiOmZhbHNlLCJuYW1lIjoiUGhpbGlwcGUgU0VCSUxMRVQiLCJwcmVmZXJyZWRfdXNlcm5hbWUiOiJzZWJpbGxldHAiLCJnaXZlbl9uYW1lIjoiUGhpbGlwcGUiLCJmYW1pbHlfbmFtZSI6IlNFQklMTEVUIiwiZW1haWwiOiJla2lwaWxvdUBnbWFpbC5jb20ifQ.RA6E318wQltrvDWphyCNJd3Z-MEe2fhbL3UwSRpMloTm1PG4rGFkmdRYvwAkZjBHd2Pf6exmJr6MJRGt1D2zbc93rHV1QQh-DiD1EUuMYPhbcZWWKOmXgwU2QIFubVaSZyIuM-UZrMX9fVfV9Q6CS3ogKshHXpnC87bv_z_XuuWbtcuMvMZ6e_ehVO4mQ6Yg6KRiuqt3t87qAx1Nzc6kPuSfUWXMwkFzKWkQ-osctS1yL6E88M-E2P2IGgcuDEgyht9VrMx2PTQO_rZttF6NgtTad1mcc3gU0G8ZPwX-0kRtsL3DO4_1T0diRZF2bc4BjPHdDZMe4GqOFZe71ArE_A",
+							"type": "string"
+						},
+						{
+							"key": "tokenType",
+							"value": "bearer",
+							"type": "string"
+						},
+						{
+							"key": "addTokenTo",
+							"value": "header",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"longitude\": 67.721655,\n\t\"latitude\": 33.927125\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8081/countries",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"countries"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "countries(Afghanistan)_authent_oauth2",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"longitude\": 67.721655,\n\t\"latitude\": 33.927125\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8081/countries",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"countries"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "countryhistory",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8081/countryhistory/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"countryhistory",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "countryhistory/findByIso2AtDate",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8081/countryhistory/search/findByIso2AtDate?iso2=af&currentDate=1972-04-27T00:00:01",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"countryhistory",
+						"search",
+						"findByIso2AtDate"
+					],
+					"query": [
+						{
+							"key": "iso2",
+							"value": "af"
+						},
+						{
+							"key": "currentDate",
+							"value": "1972-04-27T00:00:01"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "countryhistory/sort",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8081/countryhistory?sort=iso3,asc",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"countryhistory"
+					],
+					"query": [
+						{
+							"key": "sort",
+							"value": "iso3,asc"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "countryhistory/search",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8081/countryhistory/search",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"countryhistory",
+						"search"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "countryhistory(Afghanistan)",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "gierke",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "ollie",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"country\": \"http://localhost:8081/countries/1\",\n    \"usualName\": \"Afghanistan\",\n    \"officialName\": \"la République islamique d’Afghanistan\",\n    \"listName\": \"Afghanistan\",\n    \"iso2\": \"af\",\n    \"iso3\": \"afg\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8081/countryhistory/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"countryhistory",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "countryhistory(Afghanistan) Copy",
+			"request": {
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"country\":\"http://localhost:8081/countries/1\",\n\t\"usualName\":\"Afghanistan\",\n\t\"inhabitant\": \"Afghan (e)\",\n\t\"officialName\":\"la République islamique d’Afghanistan\",\n\t\"listName\":\"Afghanistan\",\n\t\"iso2\":\"af\",\n\t\"iso3\":\"afg\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8081/countryhistory/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"countryhistory",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "countryHistory(Afghanistan)",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8081/countryhistory/2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"countryhistory",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "countryhistory(Afghanistan)",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8081/countryhistory/2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"countryhistory",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "countryhistory",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8081/profile/countryhistory/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"profile",
+						"countryhistory",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "countries(Bangladesh)",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"longitude\": 90.356331,\n\t\"latitude\": 23.684994\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8081/countries",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"countries"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "countryhistory(Bangladesh)",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"country\":\"http://localhost:8081/countries/2\",\n\t\"usualName\":\"Bangladesh\", \n\t\"officialName\":\"la République populaire du Bangladesh\",\n\t\"listName\":\"Bangladesh\",\n\t\"iso2\":\"bd\",\n\t\"iso3\":\"bgd\",\n\t\"startDate\": \"1971-12-16T00:00:00\",\n\t\"endDate\": \"9999-12-31T12:59:59\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8081/countryhistory/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"countryhistory",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "countryhistory(Bangladesh)",
+			"request": {
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"country\":\"http://localhost:8081/countries/2\",\n\t\"usualName\":\"Bangladesh\", \n\t\"officialName\":\"la République populaire du Bangladesh\",\n\t\"listName\":\"Bangladesh\",\n\t\"iso2\":\"bd\",\n\t\"iso3\":\"bgd\",\n\t\"startDate\": \"1971-12-16T00:00:00\",\n\t\"endDate\": \"9999-12-31T12:59:59\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8081/countryhistory/4",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"countryhistory",
+						"4"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "countryhistory/findByIso2",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8081/countryhistory/search/findByIso2?iso2=af",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"countryhistory",
+						"search",
+						"findByIso2"
+					],
+					"query": [
+						{
+							"key": "iso2",
+							"value": "af"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "countryhistory/findByIso3",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8081/countryhistory/search/findByIso3?iso3=AFG",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"countryhistory",
+						"search",
+						"findByIso3"
+					],
+					"query": [
+						{
+							"key": "iso3",
+							"value": "AFG"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "countryhistory/findByIso3AtDate",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8081/countryhistory/search/findByIso3AtDate?iso3=AFG&currentDate=2020-04-27T00:00:01",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"countryhistory",
+						"search",
+						"findByIso3AtDate"
+					],
+					"query": [
+						{
+							"key": "iso3",
+							"value": "AFG"
+						},
+						{
+							"key": "currentDate",
+							"value": "2020-04-27T00:00:01"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "countryhistory/findByStartDateLessThan",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8081/countryhistory/search/findByStartDateLessThan?startDate=2020-04-27T00:00:01&limit=1&sort=usualName,Asc",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"countryhistory",
+						"search",
+						"findByStartDateLessThan"
+					],
+					"query": [
+						{
+							"key": "startDate",
+							"value": "2020-04-27T00:00:01"
+						},
+						{
+							"key": "limit",
+							"value": "1"
+						},
+						{
+							"key": "sort",
+							"value": "usualName,Asc"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "countryhistory/test",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8081/countryhistory/filter?officialName=république pop",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"countryhistory",
+						"filter"
+					],
+					"query": [
+						{
+							"key": "officialName",
+							"value": "république pop"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "countryhistory/bydate",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8081/countryhistory/search/findAllAtDate?currentDate=2020-04-27T00:00:01",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"countryhistory",
+						"search",
+						"findAllAtDate"
+					],
+					"query": [
+						{
+							"key": "currentDate",
+							"value": "2020-04-27T00:00:01"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "countryhistory/findByUsualName",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8081/countryhistory/search/findByUsualNameInsensitiveCase?usualName=a",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"countryhistory",
+						"search",
+						"findByUsualNameInsensitiveCase"
+					],
+					"query": [
+						{
+							"key": "usualName",
+							"value": "a"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "countries Copy",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:8081/countries",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"countries"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "countries(Afghanistan) Copy",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"longitude\": 67.721655,\n\t\"latitude\": 33.927125\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8081/countries",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"countries"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "countries Copy",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:8081/countries",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"countries"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Tes_openid_implicite",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/auth/realms/MyRealm/protocol/openid-connect/auth?response_type=id_token&scope=openid&client_id",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"auth",
+						"realms",
+						"MyRealm",
+						"protocol",
+						"openid-connect",
+						"auth"
+					],
+					"query": [
+						{
+							"key": "response_type",
+							"value": "id_token"
+						},
+						{
+							"key": "scope",
+							"value": "openid"
+						},
+						{
+							"key": "client_id",
+							"value": null
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}

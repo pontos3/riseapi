@@ -21,7 +21,7 @@ spring:
 
 logging:
   level:
-    org.springframework.security: DEBUG
+    org.springframework.security: TRACE
     org.hibernate: ERROR
     fr.pontos3.rise.riserest: ERROR
 
