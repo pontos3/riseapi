@@ -14,8 +14,9 @@ import org.springframework.data.rest.core.annotation.RestResource;
 import org.springframework.data.web.SortDefault;
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.format.annotation.DateTimeFormat.ISO;
+import org.springframework.web.bind.annotation.CrossOrigin;
 
-
+@CrossOrigin(origins = "*")
 @RepositoryRestResource(collectionResourceRel = "countryhistory", path = "countryhistory")
 public interface CountryHistoryRepository extends PagingAndSortingRepository<CountryHistory, Long> {
     

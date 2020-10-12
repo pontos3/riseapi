@@ -35,8 +35,9 @@ import lombok.NoArgsConstructor;
 })
 public class CountryHistory {
 
+	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private @Id long id;
+	private long Id;
 
 	@Pattern(regexp= "[a-z]{2,}", message="{countryhistory.iso2.format}")
 	@Length(min=2, max=2)
